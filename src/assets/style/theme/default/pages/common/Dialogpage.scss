@@ -1,0 +1,10 @@
+.default-theme {
+  .body-item {
+    height: 30px;
+    line-height: 30px;
+    background-color: $--theme-menu-color;
+    font-weight: bold;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+}

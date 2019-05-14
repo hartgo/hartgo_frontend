@@ -1,0 +1,102 @@
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.point-icon {
+  cursor: pointer;
+}
+
+.hidden-item {
+  visibility: hidden;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.no-padding {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.no-margin {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+/*垂直居中*/
+.valign-center {
+  /*Flex布局*/
+  display: flex;
+  /* Safari */
+  display: -webkit-flex;
+  /*指定垂直居中*/
+  align-items: center;
+}
+
+/*子元素纵向顺序排列*/
+.flex-valign {
+  display: flex;
+  flex-direction: column;
+}
+
+/*子元素横向顺序排列*/
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/*子元素左右对齐排列*/
+.flex-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*子元素水平居中对齐排列*/
+.flex-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*子元素右对齐排列*/
+.flex-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/*子元素左对齐排列*/
+.flex-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/*字体超出长度后展示省略号*/
+.text-ellipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,58 @@
+.default-theme {
+  .app-left-navigation {
+    background-color: $--theme-menu-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    .menu-container {
+      -ms-flex: 1;
+      flex: 1;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .menu-list {
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-button {
+      text-align: center;
+      cursor: pointer;
+      color: $--theme-default-gray-color;
+
+      i {
+        font-size: 28px;
+      }
+    }
+
+    .menu-item {
+      text-align: center;
+      cursor: pointer;
+      color: $--theme-default-gray-color;
+
+      &:hover {
+        color: #ffffff;
+      }
+
+      &.active {
+        color: $--color-primary;
+      }
+
+      i {
+        font-size: 24px;
+      }
+
+      p {
+        margin: 0;
+        padding: 5px 0;
+      }
+    }
+  }
+}

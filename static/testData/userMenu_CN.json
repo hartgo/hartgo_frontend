@@ -1,0 +1,540 @@
+[
+{
+  "menuId": 1,
+  "menuName": "系统管理",
+  "url": "/system",
+  "menuType": "M",
+  "visible": 0,
+  "perms": "system:manage:view",
+  "icon": "platform icon-setting",
+  "disabled": false,
+  "children": [
+  {
+    "menuId": 101,
+    "menuName": "系统参数",
+    "url": "/system/params",
+    "menuType": "C",
+    "visible": 0,
+    "perms": "system:param:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 10101,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "system:param:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 10102,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "system:param:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 10103,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "system:param:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 10104,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "system:param:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  }]
+},
+{
+  "menuId": 2,
+  "menuName": "账户管理",
+  "url": "/accountmgmt",
+  "menuType": "M",
+  "visible": 0,
+  "perms": "account:manage:view",
+  "icon": "platform icon-profile",
+  "disabled": false,
+  "children": [
+  {
+    "menuId": 201,
+    "menuName": "用户管理",
+    "url": "/accountmgmt/user",
+    "menuType": "C",
+    "visible": 0,
+    "perms": "account:user:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 20101,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:user:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20102,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:user:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20103,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:user:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20104,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:user:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 202,
+    "menuName": "租户管理",
+    "url": "/accountmgmt/tenant",
+    "menuType": "C",
+    "visible": 0,
+    "perms": "account:tenant:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 20201,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:tenant:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20202,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:tenant:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20203,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:tenant:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20204,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:tenant:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  }]
+},
+{
+  "menuId": 3,
+  "menuName": "服务管理",
+  "url": "/servicemgmt",
+  "menuType": "M",
+  "visible": 1,
+  "perms": "service:manage:view",
+  "icon": "platform icon-service",
+  "disabled": false,
+  "children": [
+  {
+    "menuId": 301,
+    "menuName": "服务管理",
+    "url": "/servicemgmt/service",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "service:service:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 30101,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:service:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30102,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:service:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30103,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:service:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30104,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:service:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 302,
+    "menuName": "配送点管理",
+    "url": "/servicemgmt/point",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "service:point:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 30201,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:point:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30202,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:point:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30203,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:point:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30204,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:point:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  }]
+},
+{
+  "menuId": 9,
+  "menuName": "报表管理",
+  "url": "/report",
+  "menuType": "M",
+  "visible": 1,
+  "perms": "system:report:view",
+  "icon": "platform icon-controller",
+  "disabled": false,
+  "children": [
+  {
+    "menuId": 901,
+    "menuName": "对账单",
+    "url": "/report/bill",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "system:bill:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 90101,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:bill:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90102,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:bill:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90103,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:bill:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90104,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:bill:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 902,
+    "menuName": "营收报表",
+    "url": "/report/revenue",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "system:revenue:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 90201,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:revenue:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90202,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:revenue:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90203,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:revenue:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90204,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:revenue:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 903,
+    "menuName": "订单报表",
+    "url": "/report/order",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "system:order:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 90301,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:order:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90302,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:order:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90303,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:order:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90304,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:order:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 904,
+    "menuName": "任务报表",
+    "url": "/report/task",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "system:task:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 90401,
+      "menuName": "查询",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:task:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90402,
+      "menuName": "新增",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:task:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90403,
+      "menuName": "修改",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:task:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90404,
+      "menuName": "删除",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:task:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  }]
+}]

@@ -1,0 +1,540 @@
+[
+{
+  "menuId": 1,
+  "menuName": "System manage",
+  "url": "/system",
+  "menuType": "M",
+  "visible": 0,
+  "perms": "system:manage:view",
+  "icon": "platform icon-setting",
+  "disabled": false,
+  "children": [
+  {
+    "menuId": 101,
+    "menuName": "System param",
+    "url": "/system/params",
+    "menuType": "C",
+    "visible": 0,
+    "perms": "system:param:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 10101,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "system:param:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 10102,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "system:param:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 10103,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "system:param:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 10104,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "system:param:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  }]
+},
+{
+  "menuId": 2,
+  "menuName": "Account manage",
+  "url": "/accountmgmt",
+  "menuType": "M",
+  "visible": 0,
+  "perms": "account:manage:view",
+  "icon": "platform icon-profile",
+  "disabled": false,
+  "children": [
+  {
+    "menuId": 201,
+    "menuName": "User manage",
+    "url": "/accountmgmt/user",
+    "menuType": "C",
+    "visible": 0,
+    "perms": "account:user:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 20101,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:user:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20102,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:user:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20103,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:user:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20104,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:user:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 202,
+    "menuName": "Tenant manage",
+    "url": "/accountmgmt/tenant",
+    "menuType": "C",
+    "visible": 0,
+    "perms": "account:tenant:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 20201,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:tenant:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20202,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:tenant:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20203,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:tenant:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 20204,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 0,
+      "perms": "account:tenant:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  }]
+},
+{
+  "menuId": 3,
+  "menuName": "Service manage",
+  "url": "/servicemgmt",
+  "menuType": "M",
+  "visible": 1,
+  "perms": "service:manage:view",
+  "icon": "platform icon-service",
+  "disabled": false,
+  "children": [
+  {
+    "menuId": 301,
+    "menuName": "Service manage",
+    "url": "/servicemgmt/service",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "service:service:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 30101,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:service:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30102,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:service:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30103,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:service:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30104,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:service:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 302,
+    "menuName": "Point manage",
+    "url": "/servicemgmt/point",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "service:point:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 30201,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:point:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30202,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:point:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30203,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:point:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 30204,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "service:point:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  }]
+},
+{
+  "menuId": 9,
+  "menuName": "Report manage",
+  "url": "/report",
+  "menuType": "M",
+  "visible": 1,
+  "perms": "system:report:view",
+  "icon": "platform icon-controller",
+  "disabled": false,
+  "children": [
+  {
+    "menuId": 901,
+    "menuName": "Bill report",
+    "url": "/report/bill",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "system:bill:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 90101,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:bill:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90102,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:bill:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90103,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:bill:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90104,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:bill:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 902,
+    "menuName": "Revenue report",
+    "url": "/report/revenue",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "system:revenue:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 90201,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:revenue:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90202,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:revenue:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90203,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:revenue:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90204,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:revenue:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 903,
+    "menuName": "Order report",
+    "url": "/report/order",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "system:order:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 90301,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:order:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90302,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:order:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90303,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:order:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90304,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:order:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  },
+  {
+    "menuId": 904,
+    "menuName": "Task report",
+    "url": "/report/task",
+    "menuType": "C",
+    "visible": 1,
+    "perms": "system:task:view",
+    "icon": "#",
+    "disabled": false,
+    "children": [
+    {
+      "menuId": 90401,
+      "menuName": "Query",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:task:view",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90402,
+      "menuName": "Add",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:task:add",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90403,
+      "menuName": "Modify",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:task:modify",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    },
+    {
+      "menuId": 90404,
+      "menuName": "Delete",
+      "url": "",
+      "menuType": "F",
+      "visible": 1,
+      "perms": "system:task:delete",
+      "icon": "#",
+      "disabled": false,
+      "children": []
+    }]
+  }]
+}]

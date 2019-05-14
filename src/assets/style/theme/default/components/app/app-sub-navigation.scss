@@ -1,0 +1,61 @@
+.default-theme {
+  .app-sub-navigation {
+    position: relative;
+    background-color: $--theme-bg-color;
+
+    .menu-area {
+      margin-left: 10px;
+    }
+
+    .left-menu-area {
+      flex: none;
+      padding-right: 15px;
+      border-bottom: 1px solid $--color-primary;
+      position: relative;
+    }
+
+    .right-menu-area {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      border-bottom: 1px solid $--color-primary;
+      -ms-flex: 1;
+      flex: 1;
+      /*margin-left: 10px;*/
+    }
+
+    .point-arrow {
+      position: absolute;
+      top: calc(100% - 7px);
+      width: 15px;
+      height: 15px;
+      background-color: $--color-primary;
+      border-radius: 50%;
+      border: 5px solid $--theme-bg-color;
+    }
+
+    .point-arrow.left {
+      left: -5px;
+    }
+
+    .point-arrow.right {
+      right: 0;
+    }
+
+    .menu-item {
+      padding: 0 15px;
+      cursor: pointer;
+
+      &.active {
+        color: $--color-primary;
+      }
+    }
+
+  }
+}

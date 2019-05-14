@@ -1,0 +1,146 @@
+.default-theme {
+  .app-top-navigation {
+    background-color: $--theme-menu-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .app-top-navigation .logo-area {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    background-color: #676c71;
+  }
+
+  .app-top-navigation .logo-area img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .app-top-navigation .logo-area p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .app-top-navigation .menu {
+    margin-left: 40px;
+    flex: 1;
+  }
+
+  .app-top-navigation .user {
+    color: $--theme-default-gray-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+
+  .app-top-navigation .user:hover {
+    color: #fff;
+  }
+
+  .app-top-navigation .user .photo {
+    width: 40px;
+    height: 40px;
+    background-color: $--theme-default-gray-color;
+    border-radius: 6px;
+    margin-left: 10px;
+  }
+
+  .app-top-navigation .user .photo img {
+    height: 40px;
+  }
+
+  .app-top-navigation .nav-item {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $--theme-default-gray-color;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .app-top-navigation .nav-item .notice {
+    height: 20px;
+    padding: 0px 10px;
+    border-radius: 10px;
+    background-color: rgba(red, 0.8);
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    line-height: 20px;
+    font-weight: 800;
+  }
+
+  .app-top-navigation .btn {
+    position: relative;
+    color: $--theme-default-gray-color;
+    width: 97px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 20px;
+    border: 1px solid #323942;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .app-top-navigation .btn i {
+    margin-left: 5px;
+  }
+
+  .app-top-navigation .popup {
+    display: none;
+    position: absolute;
+    top: 32px;
+    width: 95px;
+    background: $--theme-menu-color;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+  }
+
+  .app-top-navigation .btn>div:hover .popup {
+    display: block;
+  }
+
+  .app-top-navigation .popup>li {
+    line-height: 25px;
+    font-size: 14px;
+    color: #6D767C;
+    padding: 5px 0;
+  }
+
+  .app-top-navigation .popup>li:hover {
+    color: #fff;
+    background: #083d7f;
+  }
+
+  .app-top-navigation .nav-item:hover {
+    color: #ffffff
+  }
+
+  .app-top-navigation .nav-item i {
+    font-size: 20px;
+  }
+
+  .app-top-navigation .nav-item.active {
+    color: $--color-primary;
+  }
+}

@@ -1,0 +1,213 @@
+/* 该页面定义公共样式，在项目入口main.js文件中引入 */
+@charset "utf-8";
+
+/* ElementUI主题颜色 */
+$--color-primary: #0258ba;
+
+/* 默认页面背景颜色 */
+$--theme-bg-color: #fff;
+/* 默认页面菜单栏背景颜色 */
+$--theme-menu-color: #ccc;
+/* 默认字体颜色 */
+$--theme-font-color: #333;
+/* 默认边框颜色 */
+$--theme-border-color: #17344f;
+/* 页面中默认展示的灰色色值，如菜单、边框等默认颜色 */
+$--theme-default-gray-color: #6e767c;
+
+/* element-ui改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+/* 引入系统公共样式表 */
+@import "~@/assets/style/common";
+
+/* 引入主题控制函数样式表 */
+@import "~@/assets/style/mixin";
+
+/* 引入主题样式表---默认主题 */
+@import "~@/assets/style/theme/default/index";
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 默认主题全局公共样式 */
+.default-theme {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $--theme-font-color;
+  font-size: 14px !important;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $--theme-bg-color;
+  position: relative;
+
+  /*所有元素的padding不占宽度，当元素使用padding控制展示时，不影响当前元素的尺寸*/
+  * {
+    box-sizing: border-box;
+    /* Firefox */
+    -moz-box-sizing: border-box;
+    /* Safari */
+    -webkit-box-sizing: border-box;
+    /*所有元素在聚焦时不展示边框（主要针对Chrome）*/
+    outline: none !important;
+    /* 定制滚动条样式，主要作用于IE浏览器 */
+    /*三角箭头的颜色*/
+    scrollbar-arrow-color: #6C7988;
+    /*立体滚动条的颜色*/
+    scrollbar-face-color: #6C7988;
+    /*立体滚动条亮边的颜色*/
+    scrollbar-3dlight-color: #6C7988;
+    /*滚动条空白部分的颜色*/
+    scrollbar-highlight-color: #6C7988;
+    /*立体滚动条阴影的颜色*/
+    scrollbar-shadow-color: #6C7988;
+    /*立体滚动条强阴影的颜色*/
+    scrollbar-darkshadow-color: rgba(#000, 0.5);
+    /*立体滚动条背景颜色*/
+    scrollbar-track-color: #1B242D;
+    /*滚动条的基本颜色*/
+    scrollbar-base-color: #f8f8f8;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #6C7988;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #6C7988
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #6C7988
+  }
+
+  /*所有表单元素的字体使用页面主字体*/
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    list-style: none;
+  }
+
+  /* 系统应用页面最外层容器 */
+  .router-view {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  /* 首页内容区域样式 */
+  .app-container {
+    background-color: $--theme-bg-color;
+  }
+
+  /* 系统主页内容主区域：除顶部导航栏和左侧导航栏 */
+  .main-container {
+    background-color: $--theme-bg-color;
+    padding: 10px;
+  }
+
+  i.platform {
+    font-size: 16px;
+  }
+
+  /* 页面需要分左右区域时，使用该样式，如左侧为设备或区域树，右边为内容主区域，使用该样式来进行布局 */
+  .page-main-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+
+    /* 左侧内容区域 */
+    .left-area {
+      position: absolute;
+      width: 240px;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    /* 右侧内容主区域 */
+    .main-area {
+      position: relative;
+      margin-left: 250px;
+      width: calc(100% - 250px);
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: auto;
+    }
+  }
+
+  /* 列表页面布局 */
+  .list-page-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    
+    /* 搜索过滤条件展示区域 */
+    .search-container {
+      padding: 0px 10px;
+      position: relative;
+      
+      /* 临时规避样式，搜索区域的输入框不允许出现底部撑开区域 */
+      .el-form-item--small.el-form-item {
+        margin-bottom: 0;
+      }
+    }
+    
+    /* 表格数据展示区域 */
+    .table-container {
+      -ms-flex: 1;
+      flex: 1;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding: 10px;
+      overflow-y: auto;
+      
+      /* 表格上方的操作按钮展示区域 */
+      .operation-container {
+        margin-bottom: 5px;
+      }
+    }
+    
+    /* 分页信息展示区域 */
+    .pagination-container {
+      padding: 0px 10px;
+      text-align: center;
+    }
+  }
+}
