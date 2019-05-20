@@ -4,10 +4,10 @@
       <div class="search-container">
         <el-form :inline="true" ref="searchForm" :model="serchParams">
           <el-form-item prop="name" label="租户名称">
-            <el-input v-model="serchParams.name" @keyup.enter.native="serachData" placeholder="请输入租户名"></el-input>
+            <el-input clearable v-model="serchParams.name" @keyup.enter.native="searchData" placeholder="请输入租户名"></el-input>
           </el-form-item>
-          <el-button type="primary" @click="page.pageNo = 1; serachData()">查询</el-button>
-          <el-button type="info" @click="$refs.searchForm.resetFields(); serachData();">重置</el-button>
+          <el-button type="primary" @click="page.pageNo = 1; searchData()">查询</el-button>
+          <el-button type="info" @click="$refs.searchForm.resetFields(); searchData();">重置</el-button>
         </el-form>
       </div>
       <div class="table-container">
@@ -59,12 +59,12 @@
       </div>
     </div>
     <el-dialog :title="infoTitleMap[infoFlag]" :visible.sync="infoDialogFlag" :close-on-click-modal="false" width="35%">
-      <el-form :model="infoData" ref="infoDialog" label-width="100px" :rules="infoRule">
+      <el-form :model="infoData" ref="infoDialog" label-width="100px" :rules="infoFlag !== 'detail' ? infoRule : {}">
         <div class="dialog-body">
           <div class="body-item">基本信息</div>
           <div class="flex-row" v-if="infoFlag !== 'add'">
             <el-form-item label="租户ID" prop="tenantId">
-              <el-input disabled v-model.trim="infoData.tenantId"></el-input>
+              <el-input disabled v-model.trim="infoData.tenantId" placeholder="请输入租户ID"></el-input>
             </el-form-item>
             <el-form-item label="租户状态" prop="tenantStatus" v-if="infoFlag === 'detail'">
               <div style="color: #C0C4CC;">{{statusText[infoData.tenantStatus] || '未知'}}</div>
@@ -290,11 +290,11 @@ export default {
     }
   },
   mounted() {
-    this.serachData();
+    this.searchData();
   },
   methods: {
     // 数据查询
-    serachData() {
+    searchData() {
       this.loadingData = true;
       setTimeout(() => {
         this.$log.info('查询数据，查询条件为：', this.serchParams, '； 分页信息为：', this.page);
@@ -328,12 +328,12 @@ export default {
     pageSizeChange(val) {
       this.$log.info('用户切换每页展示条数，切换后的每页展示数为：', val);
       this.page.pageSize = val;
-      this.serachData();
+      this.searchData();
     },
     // 翻页操作
     pageChange(val) {
       this.$log.info('用户进行翻页操作，翻页后的新页码为：', val);
-      this.serachData();
+      this.searchData();
     },
     // 新增
     addItem() {

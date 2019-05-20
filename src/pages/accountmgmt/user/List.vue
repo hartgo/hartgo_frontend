@@ -2,18 +2,18 @@
   <div class="page-main-container">
     <div class="list-page-container">
       <div class="search-container">
-        <el-form :inline="true" ref="searchForm" :model="serchParams">
+        <el-form :inline="true" ref="searchForm" :model="searchParams">
           <el-form-item prop="mobileNo" label="账号">
-            <el-input v-model="serchParams.mobileNo" @keyup.enter.native="serachData" placeholder="请输入账号"></el-input>
+            <el-input clearable v-model="searchParams.mobileNo" @keyup.enter.native="searchData" placeholder="请输入账号"></el-input>
           </el-form-item>
           <el-form-item prop="realName" label="姓名">
-            <el-input v-model="serchParams.realName" @keyup.enter.native="serachData" placeholder="请输入姓名"></el-input>
+            <el-input clearable v-model="searchParams.realName" @keyup.enter.native="searchData" placeholder="请输入姓名"></el-input>
           </el-form-item>
           <el-form-item prop="userPhone" label="手机号">
-            <el-input v-model="serchParams.userPhone" @keyup.enter.native="serachData" placeholder="请输入手机号"></el-input>
+            <el-input clearable v-model="searchParams.userPhone" @keyup.enter.native="searchData" placeholder="请输入手机号"></el-input>
           </el-form-item>
-          <el-button type="primary" @click="page.pageNo = 1; serachData()">查询</el-button>
-          <el-button type="info" @click="$refs.searchForm.resetFields(); serachData();">重置</el-button>
+          <el-button type="primary" @click="page.pageNo = 1; searchData()">查询</el-button>
+          <el-button type="info" @click="$refs.searchForm.resetFields(); searchData();">重置</el-button>
         </el-form>
       </div>
       <div class="table-container">
@@ -71,12 +71,12 @@
       </div>
     </div>
     <el-dialog :title="infoTitleMap[infoFlag]" :visible.sync="infoDialogFlag" :close-on-click-modal="false" width="35%">
-      <el-form :model="infoData" ref="infoDialog" label-width="100px" :rules="infoRule">
+      <el-form :model="infoData" ref="infoDialog" label-width="100px" :rules="infoFlag !== 'detail' ? infoRule : {}">
         <div class="dialog-body">
           <div class="body-item">基本信息</div>
           <div class="flex-row" v-if="infoFlag !== 'add'">
             <el-form-item label="用户ID" prop="userId">
-              <el-input disabled v-model.trim="infoData.userId"></el-input>
+              <el-input disabled v-model.trim="infoData.userId" placeholder="请输入用户ID"></el-input>
             </el-form-item>
             <el-form-item label="用户状态" prop="userStatus" v-if="infoFlag === 'detail'">
               <div style="color: #C0C4CC;">{{statusText[infoData.userStatus] || '未知'}}</div>
@@ -155,7 +155,7 @@ export default {
     return {
       checkAuth: utils.checkAuth,
       loadingData: false,
-      serchParams: {
+      searchParams: {
         name: ''
       },
       data: [],
@@ -204,14 +204,14 @@ export default {
     }
   },
   mounted() {
-    this.serachData();
+    this.searchData();
   },
   methods: {
     // 数据查询
-    serachData() {
+    searchData() {
       this.loadingData = true;
       setTimeout(() => {
-        this.$log.info('查询数据，查询条件为：', this.serchParams, '； 分页信息为：', this.page);
+        this.$log.info('查询数据，查询条件为：', this.searchParams, '； 分页信息为：', this.page);
         this.data = [{
           userId: 1113,
           mobileNo: '13512345678',
@@ -246,12 +246,12 @@ export default {
     pageSizeChange(val) {
       this.$log.info('用户切换每页展示条数，切换后的每页展示数为：', val);
       this.page.pageSize = val;
-      this.serachData();
+      this.searchData();
     },
     // 翻页操作
     pageChange(val) {
       this.$log.info('用户进行翻页操作，翻页后的新页码为：', val);
-      this.serachData();
+      this.searchData();
     },
     // 新增
     addItem() {

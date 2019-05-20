@@ -198,7 +198,7 @@
   "children": [
   {
     "menuId": 301,
-    "menuName": "服务管理",
+    "menuName": "服务配置",
     "url": "/servicemgmt/service",
     "menuType": "C",
     "visible": 1,

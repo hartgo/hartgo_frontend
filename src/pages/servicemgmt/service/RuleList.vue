@@ -2,16 +2,25 @@
   <div class="page-main-container">
     <div class="list-page-container">
       <div class="search-container">
-        <el-form :inline="true" ref="searchForm" :model="searchParams">
-          <el-form-item prop="zoneName" label="配送点名称">
-            <el-input clearable v-model="searchParams.zoneName" @keyup.enter.native="searchData" placeholder="请输入配送点名称"></el-input>
-          </el-form-item>
-          <el-form-item prop="region" label="地区">
-            <el-cascader clearable :options="regionData" v-model="searchParams.region" placeholder="请选择地区" change-on-select></el-cascader>
-          </el-form-item>
-          <el-button type="primary" @click="page.pageNo = 1; searchData()">查询</el-button>
-          <el-button type="info" @click="$refs.searchForm.resetFields(); searchData();">重置</el-button>
-        </el-form>
+        <div class="flex-between">
+          <el-form :model="infoData" ref="infoDialog" label-width="100px">
+            <div class="flex-row">
+              <el-form-item label="服务编码" prop="businessId">
+                <el-input disabled v-model.trim="infoData.businessId" placeholder="请输入服务编码"></el-input>
+              </el-form-item>
+              <el-form-item label="服务名称" prop="businessName">
+                <el-input disabled v-model.trim="infoData.businessName" max-length="64" placeholder="请输入服务名称"></el-input>
+              </el-form-item>
+              <el-form-item label="服务大类" prop="businessType">
+                <el-select disabled v-model="infoData.businessType" placeholder="请选择服务大类">
+                  <el-option v-for="item in businessType" :key="item.value" :label="item.label" :value="item.value">
+                  </el-option>
+                </el-select>
+              </el-form-item>
+            </div>
+          </el-form>
+          <el-button type="primary" @click="$router.push({ path: '/servicemgmt/service/list' });">返回</el-button>
+        </div>
       </div>
       <div class="table-container">
         <div class="operation-container">
@@ -23,22 +32,20 @@
           </el-table-column>
           <el-table-column type="index" label="编号" width="50">
           </el-table-column>
-          <el-table-column prop="code" label="编码">
+          <el-table-column prop="ruleId" label="规则ID">
             <template slot-scope="scope">
-              <div class="table-link" @click="viewDetail(scope.row)">{{scope.row.code}}</div>
+              <div class="table-link" @click="viewDetail(scope.row)">{{scope.row.ruleId}}</div>
             </template>
           </el-table-column>
-          <el-table-column prop="zoneName" label="名称">
+          <el-table-column prop="ruleName" label="规则名称">
           </el-table-column>
-          <el-table-column prop="province" label="省份">
+          <el-table-column prop="fixAmount" label="固定金额">
           </el-table-column>
-          <el-table-column prop="city" label="城市">
+          <el-table-column prop="fixRate" label="固定费率">
           </el-table-column>
-          <el-table-column prop="region" label="区县">
+          <el-table-column prop="strategyCode" label="其他策略">
           </el-table-column>
-          <el-table-column prop="street" label="街道">
-          </el-table-column>
-          <el-table-column prop="address" label="详细地址">
+          <el-table-column prop="strategyArg" label="策略参数">
           </el-table-column>
           <el-table-column prop="remark" label="备注">
           </el-table-column>
@@ -59,30 +66,34 @@
       <el-form :model="infoData" ref="infoDialog" label-width="100px" :rules="infoFlag !== 'detail' ? infoRule : {}">
         <div class="dialog-body">
           <div class="body-item">基本信息</div>
-          <div class="flex-row" v-if="infoFlag !== 'add'">
-            <el-form-item label="编码" prop="code">
-              <el-input disabled v-model.trim="infoData.code" placeholder="请输入编码"></el-input>
-            </el-form-item>
-          </div>
           <div class="base-info">
-            <div style="max-width: 600px;">
-              <el-form-item label="名称" prop="zoneName">
-                <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.zoneName" max-length="64" placeholder="请输入配送点名称"></el-input>
+            <div class="flex-row">
+              <el-form-item label="规则ID" prop="ruleId" v-if="infoFlag !== 'add'">
+                <el-input disabled v-model.trim="infoData.ruleId" placeholder="请输入规则ID"></el-input>
+              </el-form-item>
+                <el-form-item label="规则名称" prop="ruleName">
+                  <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.ruleName" max-length="64" placeholder="请输入规则名称"></el-input>
+                </el-form-item>
+            </div>
+            <div class="flex-row">
+              <el-form-item label="固定金额" prop="fixAmount">
+                <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.fixAmount" max-length="64" placeholder="请输入固定金额"></el-input>
+              </el-form-item>
+              <el-form-item label="固定费率" prop="fixRate">
+                <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.fixRate" max-length="64" placeholder="请输入固定费率"></el-input>
               </el-form-item>
             </div>
-            <div style="max-width: 600px;">
-              <el-form-item label="地址" prop="region">
-                <el-cascader :disabled="infoFlag === 'detail'" :options="regionData" v-model="infoData.region" placeholder="请选择地址" change-on-select></el-cascader>
+            <div class="flex-row">
+              <el-form-item label="其他策略" prop="strategyCode">
+                <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.strategyCode" max-length="64" placeholder="请输入其他策略"></el-input>
               </el-form-item>
-            </div>
-            <div style="max-width: 600px;">
-              <el-form-item label="详细地址" prop="address">
-                <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.address" max-length="64" placeholder="请输入详细地址"></el-input>
+              <el-form-item label="策略参数" prop="strategyArg">
+                <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.strategyArg" max-length="64" placeholder="请输入策略参数"></el-input>
               </el-form-item>
             </div>
             <div style="max-width: 600px;">
               <el-form-item label="备注" prop="remark">
-                <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.remark" max-length="256" placeholder="请输入备注信息"></el-input>
+                <el-input :disabled="infoFlag === 'detail'" v-model.trim="infoData.remark" max-length="256" placeholder="请输入备注"></el-input>
               </el-form-item>
             </div>
           </div>
@@ -100,41 +111,42 @@
 <script>
 import utils from '@/utils';
 import appConfig from '@/utils/appConfig'
-import { regionData } from 'element-china-area-data'
 export default {
   components: {},
   data() {
     return {
       checkAuth: utils.checkAuth,
       loadingData: false,
-      searchParams: {
-        zoneName: '',
-        region: []
+      serchParams: {
+        name: ''
       },
-      regionData: regionData,
       data: [],
       pagerCount: appConfig.pagerCount,
       page: appConfig.pageInfo,
       pageSizes: appConfig.pageSizes,
-      statusText: {
-        1: '启用',
-        2: '禁用'
+      businessTypeText: {
+        1: '供应服务',
+        2: '配送服务'
       },
+      businessType: [{
+        label: '供应服务',
+        value: 1
+      }, {
+        label: '配送服务',
+        value: 2
+      }],
       selectIds: [],
       infoTitleMap: {
-        add: '新增配送点',
-        edit: '编辑配送点',
-        detail: '配送点详情'
+        add: '新增计价规则',
+        edit: '编辑计价规则',
+        detail: '计价规则详情'
       },
       infoFlag: 'add',
       infoDialogFlag: false,
       infoData: {},
       infoRule: {
-        zoneName: [
-          { required: true, message: '请输入配送点名称', trigger: 'blur' }
-        ],
-        region: [
-          { required: true, message: '请选择地址', trigger: 'blur' }
+        ruleName: [
+          { required: true, message: '请输入计价规则名称', trigger: 'blur' }
         ]
       }
     }
@@ -147,25 +159,23 @@ export default {
     searchData() {
       this.loadingData = true;
       setTimeout(() => {
-        this.$log.info('查询数据，查询条件为：', this.searchParams, '； 分页信息为：', this.page);
+        this.$log.info('查询数据，查询条件为：', this.serchParams, '； 分页信息为：', this.page);
         this.data = [{
-          code: 1244,
-          zoneName: '马兰坡配送点',
-          province: '河南省',
-          city: '郑州市',
-          region: '中原区',
-          street: '人民路',
-          address: '海门街道118号',
-          remark: '这是河南郑州的配送点，负责人张三'
+          ruleId: 1258,
+          ruleName: '配送规则1',
+          fixAmount: '65',
+          fixRate: '25.00',
+          strategyCode: '叠加奖励',
+          strategyArg: '每10单奖励5元',
+          remark: '这是配送规则1的备注信息'
         }, {
-          code: 1255,
-          zoneName: '海狮配送点',
-          province: '广东省',
-          city: '广州市',
-          region: '天河区',
-          street: '黄岗大道',
-          address: '天正平路29号',
-          remark: '这是广东广州的配送点，负责人李四'
+          ruleId: 1587,
+          ruleName: '配送规则2',
+          fixAmount: '55',
+          fixRate: '18.00',
+          strategyCode: '叠加奖励',
+          strategyArg: '每5单奖励3元',
+          remark: '这是配送规则2的备注信息'
         }];
         this.page.totalCount = 105;
         this.loadingData = false;
@@ -173,7 +183,7 @@ export default {
     },
     // 选中表格数据
     selectData(val) {
-      this.selectIds = val.map((item) => { return item.code; });
+      this.selectIds = val.map((item) => { return item.ruleId; });
       this.$log.info('用户使用复选框，多选表格数据，选中的ID为：', this.selectIds);
     },
     // 表格展示数量发生编号
@@ -195,7 +205,7 @@ export default {
     },
     // 删除（批量）
     deleteItems() {
-      this.$confirm('您确定删除选中的配送点信息吗？', '批量删除配送点', {
+      this.$confirm('您确定删除选中的计价规则信息吗？', '批量删除计价规则', {
         type: 'warning'
       }).then(_ => {
         // TODO
@@ -206,17 +216,17 @@ export default {
     viewDetail(item) {
       this.infoFlag = 'detail';
       this.infoDialogFlag = true;
-      this.$log.info('查看元素详情，操作的元素ID为：', item.code);
+      this.$log.info('查看元素详情，操作的元素ID为：', item.ruleId);
     },
     // 编辑（单个）
     eidtItem(item) {
       this.infoFlag = 'edit';
       this.infoDialogFlag = true;
-      this.$log.info('编辑元素，操作的元素ID为：', item.code);
+      this.$log.info('编辑元素，操作的元素ID为：', item.ruleId);
     },
     // 删除（单个）
     deleteItem(item) {
-      this.$confirm('您确定删除当前配送点信息吗？', '删除配送点', {
+      this.$confirm('您确定删除当前计价规则信息吗？', '删除计价规则', {
         type: 'warning'
       }).then(_ => {
         // TODO

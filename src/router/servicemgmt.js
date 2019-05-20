@@ -21,6 +21,14 @@ const routes = [{
       meta: {
         requireAuth: true
       }
+    }, {
+      path: 'rulelist',
+      name: 'ServiceRuleList',
+      component: () => import('@/pages/servicemgmt/service/RuleList'),
+      meta: {
+        requireAuth: true,
+        breadcrumb: '计价规则'
+      }
     }]
   }, {
     path: 'point',
